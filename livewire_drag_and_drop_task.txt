@@ -1,0 +1,20 @@
+Livewire Drag and Drop Task
+
+# Component
+- Home
+- Login
+- Register
+- TaskBoard
+
+# Model
+- User
+    - name
+    - email
+    - password
+- Task
+    - title
+    - description
+    - status
+
+# Drag and Drop with SortableJS
+- 
