@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Task;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class TaskBoard extends Component
@@ -41,5 +42,17 @@ class TaskBoard extends Component
     public function render()
     {
         return view('livewire.task-board');
+    }
+
+    #[On('updateTaskStatus')]
+    public function updateTaskStatus($taskId, $newStatus)
+    {
+        $task = Task::find($taskId);
+        if ($task) {
+            $task->status = $newStatus;
+            $task->save();
+            $this->loadTasks();
+            $this->dispatch('alert', 'Berhasil dipindahkan.');
+        }
     }
 }

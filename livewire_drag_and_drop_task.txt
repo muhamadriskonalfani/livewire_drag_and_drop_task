@@ -17,4 +17,7 @@ Livewire Drag and Drop Task
     - status
 
 # Drag and Drop with SortableJS
-- 
+- Tambahkan data-id di setiap kelas task-card
+- Tambahkan data-status di setiap kelas drop-zone
+- Tambahkan Script SortableJS
+- Buat listener pada komponen, bisa gunakan atibut On
