@@ -93,7 +93,7 @@
 @push('scripts')
 <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    function initSortable() {
         const dropZones = document.querySelectorAll('.drop-zone');
 
         dropZones.forEach(dropZone => {
@@ -104,7 +104,6 @@
                     const taskId = evt.item.dataset.id;
                     const newStatus = evt.to.dataset.status;
 
-                    // Panggil Livewire method
                     Livewire.dispatch('updateTaskStatus', {
                         taskId: taskId,
                         newStatus: newStatus
@@ -112,6 +111,18 @@
                 }
             });
         });
+    }
+
+    // Inisialisasi saat halaman pertama kali dimuat
+    document.addEventListener('DOMContentLoaded', function () {
+        initSortable();
+    });
+
+    // Inisialisasi ulang setiap kali Livewire selesai update DOM
+    Livewire.on('initSortableJS', () => {
+        setTimeout(() => {
+            initSortable();
+        }, 200);
     });
 </script>
 @endpush
