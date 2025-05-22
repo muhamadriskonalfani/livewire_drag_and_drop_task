@@ -28,3 +28,11 @@ Livewire Drag and Drop Task
 - Script mengambil data-id task dan data-status dari drop-zone tujuan
 - Memanggil Livewire.dispatch()
 - Livewire meng-update data dan merefresh tampilan
+
+# Tambahan 
+- Jika anda mengambil projek ini dari github, akan ada beberapa yang harus ditambahkan, seperti node_modules, vendor, .env.
+- Folder dan file tersebut tidak di-upload ke github karena beberapa hal, seperti ukuran terlalu besar, masalah keamanan, dan sebagainya.
+- Menambahkan node_modules, "npm install"
+- Menambahkan vendor, "composer install"
+- Membuat file .env, "copy .env.example .env"
+- Penting untuk membuat kunci aplikasi baru setelah menyalin proyek, "php artisan key:generate"
